@@ -1,0 +1,7 @@
+name: nifty-tools-docs
+
+channels:
+  - conda-forge
+
+dependencies:
+  - breathe
