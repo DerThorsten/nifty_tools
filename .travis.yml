@@ -118,6 +118,6 @@ install:
     - conda update -q conda
     - conda info -a
     - conda install boost -c conda-forge
-    - cmake 
+    - cmake .
     - make -j 2
     - CTEST_OUTPUT_ON_FAILURE=TRUE make test
