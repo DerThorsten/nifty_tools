@@ -87,7 +87,7 @@ env:
     - MINCONDA_VERSION="latest"
     - MINCONDA_LINUX="Linux-x86_64"
     - MINCONDA_OSX="MacOSX-x86_64"
-before_install:
+before_script:
     - |
       # Configure build variables
       if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
@@ -101,7 +101,7 @@ before_install:
         export CXX=clang++ CC=clang;
       fi
     
-install:
+script:
     # Define the version of miniconda to download
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
         MINCONDA_OS=$MINCONDA_LINUX;
