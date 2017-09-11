@@ -120,4 +120,4 @@ install:
     - conda install boost -c conda-forge
     - cmake .
     - make -j 2
-    - ./src/test/test_nifty_tools
+    - ./src/tests/test_nifty_tools
