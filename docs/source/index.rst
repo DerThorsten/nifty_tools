@@ -6,8 +6,25 @@
 
 
 
-Introduction
-------------
+Welcome to nifty-tools's documentation!
+======================================
 
+Contents:
 
-Hello World
+.. toctree::
+   :maxdepth: 2
+
+   readme
+   installation
+   usage
+   modules
+   contributing
+   authors
+   history
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
