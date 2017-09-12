@@ -1,6 +1,6 @@
 
 .. image:: https://img.shields.io/travis/DerThorsten/nifty_tools.svg
-        :target: https://travis-ci.org/nasimrahaman/inferno
+    :target: https://travis-ci.org/DerThorsten/nifty_tools
 .. image:: https://readthedocs.org/projects/nifty-tools/badge/?version=latest
     :target: https://nifty-tools.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
