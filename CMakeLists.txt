@@ -77,7 +77,7 @@ include_directories(include)
 #---------------------------------------------------
 ExternalProject_Add(
     external_boost_header_only
-    PREFIX ${CMAKE_BINARY_DIR}/external_projects/GSL
+    PREFIX ${CMAKE_BINARY_DIR}/external_projects/boost
     GIT_REPOSITORY https://github.com/NumScale/boost-header-only
     GIT_TAG 3a7ee7dfafa2a484511289aab5a4f5344bdcf8d7
     TIMEOUT 5
