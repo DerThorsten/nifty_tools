@@ -107,10 +107,8 @@ script:
         MINCONDA_OS=$MINCONDA_LINUX;
       elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
         MINCONDA_OS=$MINCONDA_OSX;
-    fi
-
+      fi
     - wget "http://repo.continuum.io/miniconda/Miniconda3-$MINCONDA_VERSION-$MINCONDA_OS.sh" -O miniconda.sh;
-
     - bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
     - hash -r
@@ -122,4 +120,3 @@ script:
     - cmake .
     - make -j 2
     - ./src/tests/test_nifty_tools
-
