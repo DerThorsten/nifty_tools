@@ -122,3 +122,4 @@ script:
     - cmake .
     - make -j 2
     - ./src/tests/test_nifty_tools
+
