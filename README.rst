@@ -1,7 +1,6 @@
 
-.. image:: https://img.shields.io/travis/{ cookiecutter.project_slug | replace("_", "-") }}.svg
+.. image:: https://img.shields.io/travis/DerThorsten/nifty_tools.svg
         :target: https://travis-ci.org/nasimrahaman/inferno
-
 .. image:: https://readthedocs.org/projects/nifty-tools/badge/?version=latest
     :target: https://nifty-tools.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
