@@ -89,7 +89,7 @@ ExternalProject_Add(
 )
 # Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
 ExternalProject_Get_Property(external_boost_header_only source_dir)
-set(BOOST_INCLUDE_DIR ${source_dir}/include/boost-1.64.0/ CACHE INTERNAL "Path to include folder for boost")
+set(BOOST_INCLUDE_DIR ${source_dir}/boost-1.64.0/ CACHE INTERNAL "Path to include folder for boost")
 include_directories(${BOOST_INCLUDE_DIR})
 
 
@@ -137,6 +137,7 @@ include_directories(${XTENSOR_INCLUDE_DIR})
 # meta target for all to handle dependencies
 add_custom_target(externl_headers)
 add_dependencies(externl_headers
+    external_boost_header_only
     external_gsl 
     external_xtensor
 )
