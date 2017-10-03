@@ -12,10 +12,10 @@ namespace tools{
             end_(end){
         }
 
-        iterator begin()const{
+        iterator begin(){
             return begin_;
         }
-        iterator end()const{
+        iterator end(){
             return end_;
         }
     private:
