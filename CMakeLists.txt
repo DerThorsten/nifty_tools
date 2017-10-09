@@ -89,97 +89,25 @@ include_directories(include)
 
 
 #---------------------------------------------------
-# Boost header Only
+# Boost
 #---------------------------------------------------
-ExternalProject_Add(
-    external_boost_header_only
-    PREFIX ${CMAKE_BINARY_DIR}/external_projects/boost
-    GIT_REPOSITORY https://github.com/NumScale/boost-header-only
-    GIT_TAG 3a7ee7dfafa2a484511289aab5a4f5344bdcf8d7
-    TIMEOUT 5
-    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
-    INSTALL_COMMAND ""
-    LOG_DOWNLOAD ON
-)
-# Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
-ExternalProject_Get_Property(external_boost_header_only source_dir)
-set(BOOST_INCLUDE_DIR ${source_dir}/boost-1.64.0/ CACHE INTERNAL "Path to include folder for boost")
-include_directories(${BOOST_INCLUDE_DIR})
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 
 
 #---------------------------------------------------
-# GSL: Guideline Support Library  
+# Nifty-meta
 #---------------------------------------------------
-ExternalProject_Add(
-    external_gsl
-    PREFIX ${CMAKE_BINARY_DIR}/external_projects/GSL
-    GIT_REPOSITORY https://github.com/Microsoft/GSL
-    GIT_TAG b01450878b39307df9abb702f02ce8c1d6c9ee30
-    TIMEOUT 5
-    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
-    INSTALL_COMMAND ""
-    LOG_DOWNLOAD ON
-)
-# Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
-ExternalProject_Get_Property(external_gsl source_dir)
-set(GSL_INCLUDE_DIR ${source_dir}/include/ CACHE INTERNAL "Path to include folder for GSL")
-include_directories(${GSL_INCLUDE_DIR})
+find_package(NIFTY_META REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
 
-
-#---------------------------------------------------
-# nifty_meta
-#---------------------------------------------------
-ExternalProject_Add(
-    external_nifty_meta
-    PREFIX ${CMAKE_BINARY_DIR}/external_projects/nifty_meta
-    GIT_REPOSITORY https://github.com/DerThorsten/nifty_meta
-    GIT_TAG 0.1.0
-    TIMEOUT 5
-    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
-    INSTALL_COMMAND ""
-    LOG_DOWNLOAD ON
-)
-# Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
-ExternalProject_Get_Property(external_nifty_meta source_dir)
-set(NIFTY_META_INCLUDE_DIR ${source_dir}/include/ CACHE INTERNAL "Path to include folder for nifty_meta")
-include_directories(${NIFTY_META_INCLUDE_DIR})
-
-
-#---------------------------------------------------
-# xtensor 
-#---------------------------------------------------
-ExternalProject_Add(
-    external_xtensor
-    PREFIX ${CMAKE_BINARY_DIR}/external_projects/xtensor
-    GIT_REPOSITORY https://github.com/QuantStack/xtensor
-    GIT_TAG 0.10.7
-    TIMEOUT 5
-    #UPDATE_COMMAND ${GIT_EXECUTABLE} pull
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
-    INSTALL_COMMAND ""
-    LOG_DOWNLOAD ON
-)
-# Expose required variable (DOCTEST_INCLUDE_DIR) to parent scope
-ExternalProject_Get_Property(external_xtensor source_dir)
-set(XTENSOR_INCLUDE_DIR ${source_dir}/include/ CACHE INTERNAL "Path to include folder for xtensor")
-include_directories(${XTENSOR_INCLUDE_DIR})
 
 
 # meta target for all to handle dependencies
 add_custom_target(externl_headers)
-add_dependencies(externl_headers
-    external_boost_header_only
-    external_gsl 
-    external_xtensor
-    external_nifty_meta
-)
+# add_dependencies(externl_headers
+# )
 
 
 
