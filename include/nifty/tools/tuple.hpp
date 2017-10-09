@@ -2,6 +2,7 @@
 
 #include <tuple>
 
+#include "nifty/meta/integral_constant.hpp"
 #include "nifty/meta/tuple.hpp"
 
 namespace nifty{
@@ -17,7 +18,10 @@ namespace tools{
 
             template<class TUPLE, class F>
             static void op(TUPLE && tuple, F && f){
+
+                // call functor
                 f(std::get<INDEX>(tuple));
+
                 // recurse
                 ForEachImpl<INDEX+1, N>::op(std::forward<TUPLE>(tuple), std::forward<F>(f));
             }
@@ -34,8 +38,6 @@ namespace tools{
 
     }
     ///\endcond
-
-
 
     template<class ... ARGS,  class F> 
     void for_each(const std::tuple<ARGS ...> & tuple, F && functor){
