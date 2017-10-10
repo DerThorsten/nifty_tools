@@ -114,13 +114,14 @@ script:
     - export PATH="$HOME/miniconda/bin:$PATH"
     - hash -r
     - conda config --set always_yes yes --set changeps1 no
+    - conda install conda-build
     - conda config --add channels conda-forge --force
     - conda config --add channels derthorsten --force
     - conda clean --packages
     - conda update -q conda
     - conda info -a
     - conda-build recipe
-    
+
     # - cmake .
     # - make -j 2
     # - ./src/tests/test_nifty_tools
