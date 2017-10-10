@@ -100,7 +100,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 # Nifty-meta
 #---------------------------------------------------
 find_package(NIFTY_META REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS})
+include_directories(${NIFTY_META_INCLUDE_DIRS})
 
 
 
