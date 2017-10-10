@@ -32,8 +32,8 @@ cmake  \
     -DCMAKE_CXX_FLAGS_DEBUG="${NIFTY_INFUSION_CXX_FLAGS}" \
     \
     -DDEPENDENCY_SEARCH_PREFIX=${PREFIX} \
-    -DBoost_INCLUDE_DIRS=${PREFIX/include \
-    
+    -DBoost_INCLUDE_DIRS="${PREFIX}/include" 
+
 make -j${CPU_COUNT}
 
 make install

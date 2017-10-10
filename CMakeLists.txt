@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
 
-project(NIFT_TOOLS)
+project(NIFTY_TOOLS)
 set(${PROJECT_NAME}_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #-------------------------------------------------------------------------------------------------------------------
