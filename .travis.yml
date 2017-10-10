@@ -114,7 +114,7 @@ script:
     - export PATH="$HOME/miniconda/bin:$PATH"
     - hash -r
     - conda config --set always_yes yes --set changeps1 no
-    - conda install conda-build
+    - conda install conda-build -c derthorsten conda-forge
     - conda config --add channels conda-forge --force
     - conda config --add channels derthorsten --force
     - conda clean --packages
